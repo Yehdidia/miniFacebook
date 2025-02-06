@@ -1,9 +1,13 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
+  /*ax-width: 1280px;*/
+   /*argin: 0 auto;*/
+   /*adding: 2rem;*/
+    text-align: center;
+  /*min-width: 1500px;
+   min-height: 100vh;*/
+   width: 100%;
+   height: 100vh;
+  }
 
 .logo {
   height: 6em;
@@ -39,4 +43,137 @@
 
 .read-the-docs {
   color: #888;
+}
+
+.hide{
+  display: none;
+}
+
+.offscreen{
+  display: none;
+}
+
+#uidnote{
+  height: 5px;
+}
+
+.gray{
+  background-color: gray;
+  height: 100%;
+  width: 100%;
+}
+
+.presentation{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+ /*eight: 750px;
+  width: 1500px;*/
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: gray;
+}
+
+form{
+  flex-direction: column;
+  background-color: white;
+  border-radius: 5%;
+  width: 450px;
+  height: 400px;
+/*height: auto;*/
+  border: 2px solid #ddd;
+  padding: 2px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Ombre subtile */
+  transition: box-shadow 0.3s ease-in-out; /* Effet fluide */
+}
+
+.formInscription{
+  background-color: white;
+  border-radius: 5%;
+  width: 450px;
+  height: 400px;
+/*height: auto;*/
+  border: 2px solid #ddd;
+  padding: 2px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Ombre subtile */
+  transition: box-shadow 0.3s ease-in-out; /* Effet fluide */
+
+}
+
+form:hover {
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
+} 
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Optionnel : effet subtil */
+  border: 1px solid #007bff; /* Optionnel : changement de bordure */
+}
+
+input{
+  width: 250px;
+  height: 30px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  border-radius: 6px;
+}
+
+.inputRadio{
+  width: 20px;
+}
+
+.contentRadioButton{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 230px;
+  height: 30px;
+  margin-left: 5px;
+  margin-top: 5px;
+  /*border: black;*/
+  border: solid black;
+  border-radius: 5px;
+  /*background-color: red;*/
+}
+
+.radioWrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.specialInput{
+  width: 435px;
+}
+
+.headingInscription{
+  display: flex-col;
+  justify-content: center;
+  align-items: center;
+}
+
+.fistRowForm{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+select{
+  width: 140px;
+  margin-right: 5px;
+  height: 30px;
+  border-radius: 5px;
+}
+
+.bouton{
+  padding-left: 20px;
+  padding-right: 13px;
+  height: 50px;
+  width: 140px;
+  margin-top: 5px;
+  text-transform: uppercase;
+  box-shadow: inset;
+  color: white;
+  background-color: blue;
 }

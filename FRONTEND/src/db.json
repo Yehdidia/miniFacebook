@@ -1,0 +1,36 @@
+{
+  "utilisateurs": [
+    {
+      "id": "936e",
+      "prenom": "Salomon",
+      "famille": "NJAMEN",
+      "email": "salomonnjamen25@gmail.com",
+      "motdePasse": "face@pass",
+      "annee": "2004",
+      "mois": "3",
+      "jour": "31",
+      "genre": "homme",
+      "roles": [2001, 5150]
+    },
+    {
+      "id": "1372",
+      "prenom": "Stevens",
+      "famille": "Yedidia",
+      "email": "yedidia@gmail.com",
+      "motdePasse": "face@pass",
+      "annee": "2022",
+      "mois": "4",
+      "jour": "7",
+      "genre": "homme",
+      "roles": [2001, 1984]
+    }
+  ],
+  "publications": [
+    {
+      "titre": "",
+      "contenu": "",
+      "date": "",
+      "utilisateurs": ""
+    }
+  ]
+}
