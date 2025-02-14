@@ -10,7 +10,10 @@
       "mois": "3",
       "jour": "31",
       "genre": "homme",
-      "roles": [2001, 5150]
+      "roles": [
+        2001,
+        5150
+      ]
     },
     {
       "id": "1372",
@@ -22,15 +25,43 @@
       "mois": "4",
       "jour": "7",
       "genre": "homme",
-      "roles": [2001, 1984]
+      "roles": [
+        2001,
+        1984
+      ]
+    },
+    {
+      "id": "e174",
+      "prenom": "Gillop",
+      "famille": "Thibault",
+      "email": "gill@gmail.com",
+      "motdePasse": "gil@pass123",
+      "annee": "2017",
+      "mois": "6",
+      "jour": "14",
+      "genre": "homme",
+      "role": "1984"
+    },
+    {
+      "id": "d76a",
+      "prenom": "Gillopi",
+      "famille": "Thibault",
+      "email": "gill95@gmail.com",
+      "motdePasse": "gill@pass123",
+      "annee": "2017",
+      "mois": "6",
+      "jour": "14",
+      "genre": "femme",
+      "role": "1984"
     }
   ],
   "publications": [
     {
-      "titre": "",
-      "contenu": "",
-      "date": "",
-      "utilisateurs": ""
+      "id": "bd86",
+      "textPublication": "Apprendre à s'aimer. Trouver l'amour de sa vie.",
+      "imagePublication": "https://www.freepik.com/free-photo/side-view-smiley-couple-indoors_34129129.htm#from_element=category_discover&from_view=category",
+      "datePublication": "2025-02-07T20:38:57.096Z",
+      "likePublication": 0
     }
   ]
 }

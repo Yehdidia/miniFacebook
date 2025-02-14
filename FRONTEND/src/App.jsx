@@ -15,10 +15,10 @@ function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <div className="presentation">
+    <div >
     {/*<Inscription/> */}
       <Routes>
-      <Route path="/" element={<Layout />}></Route>
+      {/*<Route path="/" element={<Layout />}></Route>*/}
       {/* public routes*/}
         <Route path="/inscription" element={<Inscription/>}></Route>
         <Route path="/connection" element={<Connection/>}></Route>

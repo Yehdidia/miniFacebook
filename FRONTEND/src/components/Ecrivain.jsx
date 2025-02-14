@@ -9,7 +9,7 @@ import useAuth from "../hooks/useAuth";
 const USER_REGEX = /^[a-zA-Z][a-zA-Z0-9-_]{3,23}$/;
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8-24}$/;
 
-const Inscription = () => {
+const Ecrivain = () => {
     //const { setAuth } = useAuth;
     const userRef = useRef();
     const errRef = useRef();
@@ -38,7 +38,7 @@ const Inscription = () => {
                 }else{
                     axios.post("http://localhost:3000/utilisateurs", data).then((res)=>{
                         toast.success('Inscription Réussie! ')
-                        navigate("/connexion");
+                        navigate("/admin");
                     }).catch((err)=>{
                         console.log(err)
                         toast.error("Une erreur est survenue!")
@@ -104,7 +104,7 @@ const Inscription = () => {
 
             <form onSubmit={handleSubmit(onSubmit)} className="formInscription">
                 <div className="headingInscription">
-                    <h2>Creer un compte</h2>
+                    <h2>Creer un compte Ecrivain</h2>
                     <h3>C'est rapide et facile</h3>
                 </div><hr />
                 <label htmlFor="" >oik
@@ -166,18 +166,14 @@ const Inscription = () => {
                     {...register("genre", { required: "Sélectionnez un genre" })}
                     /></div>
                 </div>
-                <div className="textWrap">
-                <p>
-                    En cliquant sur S'inscrire, vous acceptez nos <span>Conditions générales</span>
-                    Decouvrez comment nous receuillons, utilisons et partageons vos Données en lisant notre
-                    <span>Politique d'utilisation des Données</span> et comment nous utilisons les cookies et autres technologies
-                    similaires en consultant notre <span>Politique d'utilisation des cookies</span> Vous recevrez peut-etre des notifications
-                    par texto de notre part et vous pouvez à tout moment vous désabonner.
-                </p>
-                </div>
+                <select name="" id="" className="roles" {...register("role", { required: "Sélectionnez un role" })}>
+                   <option value="2001">2001</option>
+                   <option value="1984">1984</option>
+                   <option value="5150">5150</option>
+                </select>
                 <Bouton className={'bouton'}
                 >
-                    Inscription
+                    Ajouter un ecrivain
                 </Bouton>
                 <div><Link to={"/connection"}>Vous avez déjà un compte</Link></div>
             </form>
@@ -187,4 +183,4 @@ const Inscription = () => {
     )
 }
 
-export default Inscription
+export default Ecrivain;

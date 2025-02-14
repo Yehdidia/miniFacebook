@@ -72,7 +72,8 @@
   width: 1500px;*/
   min-width: 320px;
   min-height: 100vh;
-  background-color: gray;
+ /* background-color: gray;*/
+ background-color: rgba(128,128,128,0.3);
 }
 
 form{
@@ -83,7 +84,7 @@ form{
   height: 400px;
 /*height: auto;*/
   border: 2px solid #ddd;
-  padding: 2px;
+  padding: 5px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Ombre subtile */
   transition: box-shadow 0.3s ease-in-out; /* Effet fluide */
 }
@@ -92,10 +93,10 @@ form{
   background-color: white;
   border-radius: 5%;
   width: 450px;
-  height: 400px;
+  height: 560px;
 /*height: auto;*/
   border: 2px solid #ddd;
-  padding: 2px;
+  padding: 5px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Ombre subtile */
   transition: box-shadow 0.3s ease-in-out; /* Effet fluide */
 
@@ -176,4 +177,99 @@ select{
   box-shadow: inset;
   color: white;
   background-color: blue;
+}
+
+.boutonCompte{
+  padding-left: 20px;
+  padding-right: 13px;
+  height: 50px;
+  width: 140px;
+  margin-top: 30px;
+  /*text-transform: uppercase;*/
+  box-shadow: inset;
+  color: white;
+  background-color: green;
+}
+
+
+.navbar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: blue;
+  height: 50px;
+  width: 100%;
+}
+
+.logo{
+  width: 50px;
+  height: 30px;
+  color: white;
+  font-size: x-large;
+}
+
+.navigate{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 450px;
+  height: 30px;
+  color: white;
+}
+
+.publication{
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  width: 60%;
+}
+
+textarea{
+  margin-bottom: 5px;
+}
+
+.inputUrl{
+  width: 95%;
+}
+
+.wrapper{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.textWrap{
+  width: 400px;
+  height: 110px;
+  padding-bottom: 1px;
+  font-size: small;
+}
+
+.card{
+  flex-direction: column;
+  background-color: white;
+  border-radius: 5%;
+  width: 350px;
+  height: 300px;
+/*height: auto;*/
+  border: 2px solid #ddd;
+  padding: 2px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Ombre subtile */
+  transition: box-shadow 0.3s ease-in-out; /* Effet fluide */
+}
+
+.topCard{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.roles{
+  width: 450px;
+  margin-top: 15px;
+}
+
+.deconnexion{
+  width: 120px;
+  height: 30px;
+  padding: 5px;
 }

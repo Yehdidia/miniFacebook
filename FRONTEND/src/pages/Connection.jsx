@@ -2,9 +2,11 @@ import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
 import Bouton from "../components/bouton";
+import NavBar from "../components/NavBar";
+
 
 const Connection = () => {
     const { setAuth } = useAuth();
@@ -52,11 +54,13 @@ const Connection = () => {
 
     return (
         <div>
+            <NavBar/>
+            <div className="presentation">
             <h1>facebook</h1>
-            <form onSubmit={handleSubmit(onSubmit)}>
+            <form onSubmit={handleSubmit(onSubmit)} >
                 <div className="headingInscription">
-                    <h2>Créer un compte</h2>
-                    <h3>C'est rapide et facile</h3>
+                    <h2>Se connecter à facebook</h2>
+                    <h3>Vous devez vous connecter pour continuer</h3>
                 </div>
                 <hr />
                 
@@ -76,8 +80,10 @@ const Connection = () => {
                 />
                 {errors.motdePasse && <p>{errors.motdePasse.message}</p>}
 
-                <Bouton className="bouton">Connexion</Bouton>
+                <Bouton className="bouton">Connexion</Bouton><br />
+                <Link to={"/inscription"} className="">Créer un compte</Link>
             </form>
+        </div>
         </div>
     );
 };

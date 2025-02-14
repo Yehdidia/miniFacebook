@@ -16,8 +16,13 @@ export const AuthProvider = ({ children }) => {
         }
     }, [auth]);
 
+    const logout = () => {
+        setAuth(null); // Réinitialiser auth
+        localStorage.removeItem("utilisateur"); // Supprimer l'utilisateur du stockage local
+    };
+
     return(
-        <AuthContext.Provider value={{ auth, setAuth }}>
+        <AuthContext.Provider value={{ auth, setAuth, logout }}>
         {children}
         </AuthContext.Provider>
     )
