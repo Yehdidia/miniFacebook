@@ -5,6 +5,7 @@ import './App.css'
 import Inscription from './pages/Inscription'
 import Ecrivain from './pages/Ecrivain'
 import Connection from './pages/Connection'
+import ComptePers from './pages/ComptePers'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import RequireAuth from './components/RequireAuth'
 import Admin from './pages/Admin'
@@ -28,6 +29,9 @@ function App() {
 
         <Route element={<RequireAuth allowedRoles={[2001]}/>} >
           <Route path="/" element={<Home/>}></Route>
+        </Route>
+        <Route>
+          <Route path="/comptePers" element={<ComptePers/>}></Route>
         </Route>
         <Route element={<RequireAuth allowedRoles={[1984]}/>} >
           <Route path="/ecrivain" element={<Ecrivain/>}></Route>

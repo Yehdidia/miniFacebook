@@ -39,6 +39,22 @@ const Inscription = () => {
                     axios.post("http://localhost:3000/utilisateurs", data).then((res)=>{
                         toast.success('Inscription Réussie! ')
                         navigate("/connexion");
+                        const utilisateur = res.data; // Récupérer l'utilisateur avec son ID
+
+                        // ✅ Mettre à jour le contexte AuthProvider
+                        setAuth({
+                            id: utilisateur.id, // ID de l'utilisateur
+                            prenom: utilisateur.prenom,
+                            nomUtilisateur: utilisateur.famille, // Nom de famille
+                            email: utilisateur.email
+                        });
+
+                        /*localStorage.setItem("utilisateur", JSON.stringify({
+                            id: utilisateur.id,
+                            prenom: utilisateur.prenom,
+                            nomUtilisateur: utilisateur.famille,
+                            email: utilisateur.email
+                        }));*/
                     }).catch((err)=>{
                         console.log(err)
                         toast.error("Une erreur est survenue!")
@@ -74,6 +90,14 @@ const Inscription = () => {
     const [errmsg, setErrmsg] = useState('');
     const [success, setSuccess] = useState(false);
 
+    const [annees, setAnnees] = useState([])
+    const [mois, setMois] = useState([])
+    const [jours, setJours] = useState([])
+
+    const [anneeSel, setAnneeSel] = useState("")
+    const [moisSel, setMoisSel] = useState("")
+    const [jourSel, setJourSel] = useState("")
+
     /*useEffect(()=>{
         userRef.current.focus();
     },[])*/
@@ -97,6 +121,30 @@ const Inscription = () => {
         setErrmsg('');
     }, [errmsg, pwd, matchPwd])
 
+    useEffect(()=>{
+        setAnnees([...Array(100).keys().map(i=>(2024-i))])
+    },[])
+
+    useEffect(()=>{
+        const indexMois = Array.from({length:12},(_,i)=>i)
+        setMois(indexMois)
+    },[])
+    //console.log(mois)
+    //console.log(anneeSel)
+
+    useEffect(()=>{
+        if(anneeSel && moisSel){
+            console.log(moisSel)
+            const nbrJourPrec = new Date(anneeSel, parseInt(moisSel, 10),0).getDate()
+            console.log(nbrJourPrec)
+            const listJour = [...Array(nbrJourPrec).keys()].map(i=>i+1)
+            setJours(listJour)
+        }else{
+            setJours([])
+        }
+
+    },[anneeSel, moisSel])
+    console.log(jours)
 
     return (
         <div className="presentation">
@@ -133,28 +181,34 @@ const Inscription = () => {
                 
                 />
                 <label htmlFor="">Date de naissance</label><br />
-                <select {...register("annee", { required: "Sélectionnez une année" })}>
+                <select {...register("annee", { required: "Sélectionnez une année" })} onChange={(e)=>setAnneeSel(e.target.value)}>
                     <option value="">Année</option>
-                    {[...Array(100).keys()].map(i => {
-                        const annee = 2024 - i;
-                        return <option key={annee} value={annee}>{annee}</option>;
-                    })}
+                    {
+                        annees.map(val=>{
+                            return <option key={val} value={val}>{val}</option>;
+                        })
+                    }
                  </select>
 
-                 <select {...register("mois", { required: "Sélectionnez un mois" })}>
+                 <select {...register("mois", { required: "Sélectionnez un mois" })} onChange={(e)=>setMoisSel(e.target.value)}>
                     <option value="">Mois</option>
-                    {Array.from({ length: 12 }, (_, i) => (
-                        <option key={i + 1} value={(i + 1).toString()}>
-                            {new Date(0, i).toLocaleString("fr-FR", { month: "long" })}
-                        </option>
-                    ))}
+                    {
+                        mois.map((mois)=>{
+                            const nomMois = new Date(0,mois).toLocaleString("fr-Fr", {month:"long"})
+                            return(
+                                <option key={mois} value={(mois+1).toString()}>{nomMois}</option>
+                            )
+                        })
+                    }
                 </select>
 
                 <select {...register("jour", { required: "Sélectionnez un jour" })}>
                     <option value="">Jour</option>
-                    {[...Array(31).keys()].map(i => (
-                        <option key={i + 1} value={(i + 1).toString()}>{i + 1}</option>
-                    ))}
+                    {
+                       jours.map((jour)=>{
+                        return <option key={jour} value={jour}>{jour}</option>
+                       }) 
+                    }
                 </select>
 
                 <label htmlFor="">Genre</label><br />

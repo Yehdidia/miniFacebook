@@ -30,6 +30,7 @@ const Ecrivain = () => {
             ...data,
             dateNaissance: dateNaissance.toISOString().split("T")[0] // Format YYYY-MM-DD
         });
+        console.log("submit")
 
         axios.get(`http://localhost:3000/utilisateurs?email=${data.email}`).then(
             (res)=>{

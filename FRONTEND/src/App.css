@@ -179,6 +179,35 @@ select{
   background-color: blue;
 }
 
+.btnMod{
+  padding-left: 20px;
+  padding-right: 13px;
+  height: 50px;
+  width: 140px;
+  margin-top: 5px;
+  text-transform: uppercase;
+  box-shadow: inset;
+  color: white;
+  background-color: greenyellow;
+}
+
+.btnSup{
+  padding-left: 20px;
+  padding-right: 13px;
+  height: 50px;
+  width: 140px;
+  margin-top: 5px;
+  text-transform: uppercase;
+  box-shadow: inset;
+  color: white;
+  background-color: red;
+}
+
+.adminCtrl{
+  display: flex;
+  justify-content: space-around;
+}
+
 .boutonCompte{
   padding-left: 20px;
   padding-right: 13px;
@@ -235,6 +264,8 @@ textarea{
 .wrapper{
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 15px;
 }
 
 .textWrap{
@@ -245,17 +276,38 @@ textarea{
 }
 
 .card{
+  flex: 1 1 300px;
   flex-direction: column;
   background-color: white;
   border-radius: 5%;
   width: 350px;
-  height: 300px;
-/*height: auto;*/
+  /*height: 300px;*/
+  height: auto;
   border: 2px solid #ddd;
   padding: 2px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Ombre subtile */
   transition: box-shadow 0.3s ease-in-out; /* Effet fluide */
 }
+
+.card img {
+  width: 100%; /* Prendre toute la largeur du conteneur */
+  height: auto; /* Ajuster la hauteur en fonction de la largeur */
+  max-width: 100%; /* S'assurer que l'image ne dépasse pas la largeur du conteneur */
+  object-fit: cover; /* Pour maintenir les proportions de l'image */
+  border-radius: 5px; /* Optionnel: si tu veux un arrondi sur les coins de l'image */
+}
+
+/*.card{
+  flex-direction: column;
+  background-color: white;
+  border-radius: 5%;
+  width: 350px;
+  height: auto; 
+  border: 2px solid #ddd;
+  padding: 2px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); 
+  transition: box-shadow 0.3s ease-in-out; 
+}*/
 
 .topCard{
   display: flex;
@@ -272,4 +324,29 @@ textarea{
   width: 120px;
   height: 30px;
   padding: 5px;
+}
+
+table{
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td{
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+th{
+  background-color: #f0f0f0;
+}
+
+caption{
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+tbody tr:nth-child(even){
+  background-color: #f9f9f9;
 }

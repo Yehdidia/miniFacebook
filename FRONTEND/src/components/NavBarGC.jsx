@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
 
-const NavBar = ({ checkedAddPub}) => {
+const NavBarGC = ({ checkedAddPub}) => {
     const { auth, logout } = useAuth()
 
     const handleLogout = () => {
@@ -14,8 +14,7 @@ const NavBar = ({ checkedAddPub}) => {
             <div className="logo">facebook</div>
             <div className="navigate">
                 <div><Link to={"/"}>Home</Link></div>
-               {/* <div><Link to={"/"} onClick={()=>{checkedAddPub(true)}} >Ajouter une Publication</Link></div> */}
-                <div><Link to={"/comptePers"} onClick={()=>{}} >Gérer mon Compte</Link></div>
+                <div><Link to={""} onClick={()=>{checkedAddPub(true)}} >Ajouter une Publication</Link></div> 
                 {auth ? (
                     <>
                         <div><Link to="/profile">Profil</Link></div>
@@ -30,4 +29,4 @@ const NavBar = ({ checkedAddPub}) => {
     )
 }
 
-export default NavBar;
+export default NavBarGC;

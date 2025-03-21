@@ -31,15 +31,15 @@ const Connection = () => {
             );
 
             const user = res.data[0];
-            const { email, motdePasse, roles } = user
+            const { id, prenom, email, motdePasse, roles } = user
 
             if (res.data.length > 0) {
                 localStorage.setItem("utilisateur", JSON.stringify(res.data[0]));
                 /*const roles = res.data[0]?.roles ? [...res.data[0].roles] : [];
                 console.log("Rôles attribués :", roles); // Debug
                 setAuth({ email: data.email, motdePasse: data.motdePasse, roles });*/
-                setAuth({ email, motdePasse, roles });
-                console.log("🔹 Auth mis à jour :", { email, motdePasse, roles });
+                setAuth({ id, prenom, email, motdePasse, roles });
+                console.log("🔹 Auth mis à jour :", { id, prenom, email, motdePasse, roles });
 
                 toast.success("Connexion réussie !");
                 navigate("/");
@@ -54,12 +54,11 @@ const Connection = () => {
 
     return (
         <div>
-            <NavBar/>
             <div className="presentation">
             <h1>facebook</h1>
             <form onSubmit={handleSubmit(onSubmit)} >
                 <div className="headingInscription">
-                    <h2>Se connecter à facebook</h2>
+                    <h2>Se connecter à facebook</h2>j
                     <h3>Vous devez vous connecter pour continuer</h3>
                 </div>
                 <hr />

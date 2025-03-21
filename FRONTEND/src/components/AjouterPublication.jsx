@@ -2,9 +2,12 @@ import Bouton from "./bouton";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import axios from "axios";
+import useAuth from "../hooks/useAuth";
 
 
 const AjouterPublication = () => {
+
+    const { auth } = useAuth();
 
     const user = JSON.parse(localStorage.getItem("utilisateur"))
 
@@ -16,13 +19,22 @@ const AjouterPublication = () => {
     } = useForm();
 
     const onSubmit = (data) => {
+        if (!auth) {
+            toast.error("Vous devez être connecté pour publier.");
+            return;
+        }
+
         const publication = {
             ...data,
-            idUtilisateur: user.id,
-            datePublication: new Date(),
+            idUtilisateur: auth.id, // ✅ Utilisation de auth.id
+            datePublication: new Date().toISOString(),
             likePublication: 0,
-            auteur: user.nomUtilisateur
-        }
+            auteur: auth.prenom // ✅ Utilisation de auth.prenom
+        };
+
+        //console.log(user)
+        console.log(data)
+        console.log("Me voici"+ auth.id)
 
         axios.post("http://localhost:3000/publications", publication).then
         ((res)=>{

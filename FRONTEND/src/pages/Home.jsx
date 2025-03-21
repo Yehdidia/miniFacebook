@@ -30,7 +30,7 @@ const Home = () => {
                             </div>
                             <div>
                                 <div>{publication.textPublication}</div>
-                                <div>{publication.imagePublication}</div>
+                                <div className="card img"><img src={publication.imagePublication} alt="" /></div>
                             </div>
                         </div>
                     )
